@@ -1,0 +1,25 @@
+#!/bin/bash
+
+#lister les fichiers *.java:
+find -name '*.java'
+
+#compter les fichiers *.java:
+find -name '*.java' | wc -l
+
+#liste les fichiers et leur nb de ligne de code:
+for f in $(find -name \*.java)
+do
+cat f | wc -l
+done
+
+#lister les 10 plus gros fichier *.java:
+(find . -name \*.java -exec wc -l {} \;) | sort -n | tail -10
+
+#compter le nb total de ligne:
+total = 0
+for f in $(find -name \*.java)
+do
+count = $cat $f | grep -v '^( \t)*$' | wc -l)
+total = $(($total + $count))
+done
+echo $total
