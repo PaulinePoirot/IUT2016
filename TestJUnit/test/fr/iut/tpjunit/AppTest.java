@@ -23,5 +23,4 @@ public class AppTest {
 	public void TestMultiplication(){
 		
 	}
-
 }
